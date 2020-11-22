@@ -1,0 +1,441 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://base.gd" type="Script" id=1]
+[ext_resource path="res://MenuButton.gd" type="Script" id=2]
+[ext_resource path="res://sist-respiratorio.bmp" type="Texture" id=3]
+[ext_resource path="res://sist-oseo.bmp" type="Texture" id=4]
+[ext_resource path="res://sist-nervioso.bmp" type="Texture" id=5]
+[ext_resource path="res://sist-muscular.bmp" type="Texture" id=6]
+[ext_resource path="res://sist-digestivo.bmp" type="Texture" id=7]
+[ext_resource path="res://sist-vascular.bmp" type="Texture" id=8]
+[ext_resource path="res://vector-black.jpg" type="Texture" id=9]
+
+[node name="base" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vector-black" type="Sprite" parent="."]
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
+position = Vector2( 512, 300 )
+texture = ExtResource( 9 )
+
+[node name="folder" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -0.707153
+margin_right = -0.707153
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sistemas" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="sist-digestivo" type="Sprite" parent="Sistemas"]
+position = Vector2( 74.906, 155 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 7 )
+
+[node name="sist-muscular" type="Sprite" parent="Sistemas"]
+position = Vector2( 179.972, 155 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 6 )
+
+[node name="sist-nervioso" type="Sprite" parent="Sistemas"]
+position = Vector2( 289.962, 155 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+
+[node name="sist-oseo" type="Sprite" parent="Sistemas"]
+position = Vector2( 397.071, 155 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+
+[node name="sist-respiratorio" type="Sprite" parent="Sistemas"]
+position = Vector2( 505.392, 155 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 3 )
+
+[node name="sist-vascular" type="Sprite" parent="Sistemas"]
+position = Vector2( 613.095, 155 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="Grafico" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0.490196 )
+margin_left = 700.0
+margin_top = 100.0
+margin_right = 1000.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lineRecursos" type="Line2D" parent="Grafico"]
+width = 3.0
+default_color = Color( 0.0941176, 0.207843, 0.423529, 1 )
+joint_mode = 2
+
+[node name="lineRecolectado" type="Line2D" parent="Grafico"]
+width = 1.0
+default_color = Color( 0.352941, 0.556863, 0.109804, 1 )
+joint_mode = 2
+
+[node name="lineEficiencia" type="Line2D" parent="Grafico"]
+width = 3.0
+default_color = Color( 0.356863, 0.0901961, 0.0901961, 1 )
+joint_mode = 2
+
+[node name="alto" type="Line2D" parent="Grafico"]
+points = PoolVector2Array( 0, 0, 0, 200 )
+width = 3.0
+
+[node name="ancho" type="Line2D" parent="Grafico"]
+points = PoolVector2Array( 0, 200, 300, 200 )
+width = 3.0
+joint_mode = 1
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 0, 0, 1024, 0, 1024, 600, 0, 600, 0, 0, -100, -100, -100, 700, 1124, 700, 1124, -100, -100, -100 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 45.0
+margin_right = 10.0
+margin_bottom = 59.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 55.0
+margin_bottom = 14.0
+text = "Steps : 1"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 391.0
+margin_bottom = 34.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Play" type="Button" parent="HBoxContainer"]
+margin_right = 50.0
+margin_bottom = 24.0
+text = " Play  "
+
+[node name="Pause" type="Button" parent="HBoxContainer"]
+margin_left = 54.0
+margin_right = 104.0
+margin_bottom = 24.0
+text = "Pause"
+
+[node name="Reset" type="Button" parent="HBoxContainer"]
+margin_left = 108.0
+margin_right = 156.0
+margin_bottom = 24.0
+text = "Reset"
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+margin_left = 160.0
+margin_top = 5.0
+margin_right = 311.0
+margin_bottom = 19.0
+text = "    Capas de Poblacion : "
+
+[node name="Poblacion" type="SpinBox" parent="HBoxContainer"]
+margin_left = 315.0
+margin_right = 415.0
+margin_bottom = 24.0
+rect_min_size = Vector2( 100, 0 )
+min_value = 1.0
+value = 28.0
+align = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -260.0
+margin_top = 20.0
+margin_right = -19.9999
+margin_bottom = 60.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="recursos" type="ProgressBar" parent="VBoxContainer2"]
+margin_right = 240.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 240, 15 )
+value = 1.0
+
+[node name="recolectado" type="ProgressBar" parent="VBoxContainer2"]
+margin_top = 19.0
+margin_right = 240.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 240, 15 )
+value = 1.0
+
+[node name="eficiencia" type="ProgressBar" parent="VBoxContainer2"]
+margin_top = 38.0
+margin_right = 240.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 240, 15 )
+value = 1.0
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -414.0
+margin_top = 20.0
+margin_right = -264.0
+margin_bottom = 73.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Recursos" type="Label" parent="VBoxContainer3"]
+margin_right = 150.0
+margin_bottom = 15.0
+rect_min_size = Vector2( 150, 15 )
+text = "Recursos :"
+align = 2
+
+[node name="Recolectado" type="Label" parent="VBoxContainer3"]
+margin_top = 19.0
+margin_right = 150.0
+margin_bottom = 34.0
+rect_min_size = Vector2( 150, 15 )
+text = "Recolectado :"
+align = 2
+
+[node name="Eficiencia" type="Label" parent="VBoxContainer3"]
+margin_top = 38.0
+margin_right = 150.0
+margin_bottom = 53.0
+rect_min_size = Vector2( 150, 15 )
+text = "Eficiencia :"
+align = 2
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+margin_left = 440.0
+margin_top = 35.0
+margin_right = 740.0
+margin_bottom = 290.0
+hide_on_item_selection = false
+hide_on_checkable_item_selection = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="VBoxContainer" parent="PopupMenu"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 140.0
+margin_bottom = 245.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Unidades" type="Label" parent="PopupMenu/HBoxContainer"]
+margin_right = 130.0
+margin_bottom = 14.0
+text = "Unidades"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="PopupMenu/HBoxContainer"]
+margin_top = 18.0
+margin_right = 130.0
+margin_bottom = 22.0
+
+[node name="recursos" type="Label" parent="PopupMenu/HBoxContainer"]
+margin_top = 26.0
+margin_right = 130.0
+margin_bottom = 40.0
+text = "RecursosXCiud"
+align = 1
+
+[node name="recursosXCiud" type="SpinBox" parent="PopupMenu/HBoxContainer"]
+margin_top = 44.0
+margin_right = 130.0
+margin_bottom = 68.0
+max_value = 9999.0
+value = 100.0
+rounded = true
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="PopupMenu/HBoxContainer"]
+margin_top = 72.0
+margin_right = 130.0
+margin_bottom = 76.0
+
+[node name="Periodo" type="Label" parent="PopupMenu/HBoxContainer"]
+margin_top = 80.0
+margin_right = 130.0
+margin_bottom = 94.0
+text = "PeriodoEntreCrisis"
+align = 1
+
+[node name="periodoEntreCrisis" type="SpinBox" parent="PopupMenu/HBoxContainer"]
+margin_top = 98.0
+margin_right = 130.0
+margin_bottom = 122.0
+max_value = 999.0
+align = 1
+
+[node name="Periodo2" type="Label" parent="PopupMenu/HBoxContainer"]
+margin_top = 126.0
+margin_right = 130.0
+margin_bottom = 140.0
+text = "PeriodoDeCrisis"
+align = 1
+
+[node name="periodoDeCrisis" type="SpinBox" parent="PopupMenu/HBoxContainer"]
+margin_top = 144.0
+margin_right = 130.0
+margin_bottom = 168.0
+max_value = 999.0
+value = 20.0
+align = 1
+
+[node name="HBoxContainer2" type="VBoxContainer" parent="PopupMenu"]
+margin_left = 160.0
+margin_top = 10.0
+margin_right = 290.0
+margin_bottom = 245.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Coeficientes" type="Label" parent="PopupMenu/HBoxContainer2"]
+margin_right = 130.0
+margin_bottom = 14.0
+text = "Coeficientes"
+align = 1
+
+[node name="HSeparator2" type="HSeparator" parent="PopupMenu/HBoxContainer2"]
+margin_top = 18.0
+margin_right = 130.0
+margin_bottom = 22.0
+
+[node name="produccion" type="Label" parent="PopupMenu/HBoxContainer2"]
+margin_top = 26.0
+margin_right = 130.0
+margin_bottom = 40.0
+text = "ProduccionXCiud"
+align = 1
+
+[node name="produccionXCiud" type="SpinBox" parent="PopupMenu/HBoxContainer2"]
+margin_top = 44.0
+margin_right = 130.0
+margin_bottom = 68.0
+min_value = 0.1
+max_value = 9.9
+step = 0.001
+value = 1.42
+align = 1
+
+[node name="HSeparator3" type="HSeparator" parent="PopupMenu/HBoxContainer2"]
+margin_top = 72.0
+margin_right = 130.0
+margin_bottom = 76.0
+
+[node name="decaidaCrisis" type="Label" parent="PopupMenu/HBoxContainer2"]
+margin_top = 80.0
+margin_right = 130.0
+margin_bottom = 94.0
+text = "DecaidaRecursos"
+align = 1
+
+[node name="decaidaRecursos" type="SpinBox" parent="PopupMenu/HBoxContainer2"]
+margin_top = 98.0
+margin_right = 130.0
+margin_bottom = 122.0
+max_value = 1.0
+step = 0.01
+value = 0.3
+align = 1
+
+[node name="RiesgoLesion" type="Label" parent="PopupMenu/HBoxContainer2"]
+margin_top = 126.0
+margin_right = 130.0
+margin_bottom = 140.0
+text = "RiesgoLesion"
+align = 1
+
+[node name="riesgoLesion" type="SpinBox" parent="PopupMenu/HBoxContainer2"]
+margin_top = 144.0
+margin_right = 130.0
+margin_bottom = 168.0
+max_value = 0.2
+step = 0.001
+value = 0.002
+align = 1
+
+[node name="TasaRecuperacion" type="Label" parent="PopupMenu/HBoxContainer2"]
+margin_top = 172.0
+margin_right = 130.0
+margin_bottom = 186.0
+text = "TasaRecuperacion"
+align = 1
+
+[node name="tasaRecuperacion" type="SpinBox" parent="PopupMenu/HBoxContainer2"]
+margin_top = 190.0
+margin_right = 130.0
+margin_bottom = 214.0
+max_value = 0.2
+step = 0.001
+value = 0.004
+align = 1
+
+[node name="MasOpciones" type="Button" parent="."]
+margin_left = 440.0
+margin_top = 10.0
+margin_right = 560.0
+margin_bottom = 30.0
+text = "Mas Opciones"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Estilos" type="OptionButton" parent="."]
+margin_left = 910.009
+margin_top = 564.982
+margin_right = 1005.01
+margin_bottom = 584.982
+text = "Sistemas"
+items = [ "Celulas", null, false, 0, null, "Sistemas", null, false, 1, null, "Individuos", null, false, 2, null ]
+selected = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TotalPoblacion" type="Label" parent="."]
+margin_left = 325.0
+margin_top = 38.0
+margin_right = 410.0
+margin_bottom = 57.0
+[connection signal="pressed" from="HBoxContainer/Play" to="." method="_on_Play_pressed"]
+[connection signal="pressed" from="HBoxContainer/Pause" to="." method="_on_Pause_pressed"]
+[connection signal="pressed" from="HBoxContainer/Reset" to="." method="_on_Reset_pressed"]
+[connection signal="value_changed" from="HBoxContainer/Poblacion" to="." method="_on_Poblacion_value_changed"]
+[connection signal="value_changed" from="PopupMenu/HBoxContainer/recursosXCiud" to="." method="_on_recursosXCiud_value_changed"]
+[connection signal="value_changed" from="PopupMenu/HBoxContainer/periodoEntreCrisis" to="." method="_on_periodoEntreCrisis_value_changed"]
+[connection signal="value_changed" from="PopupMenu/HBoxContainer/periodoDeCrisis" to="." method="_on_periodoDeCrisis_value_changed"]
+[connection signal="value_changed" from="PopupMenu/HBoxContainer2/produccionXCiud" to="." method="_on_produccionXCiud_value_changed"]
+[connection signal="value_changed" from="PopupMenu/HBoxContainer2/decaidaRecursos" to="." method="_on_decaidaRecursos_value_changed"]
+[connection signal="pressed" from="MasOpciones" to="MasOpciones" method="_on_MenuButton_pressed"]
