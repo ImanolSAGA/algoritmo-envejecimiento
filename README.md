@@ -34,12 +34,12 @@ Al principio del loop se les asigna una eficiencia del 100% a todas las unidades
 En cada iteración del loop, se seleccionan todas las unidades en orden aleatorio.
 
 Cada vez que se selecciona una unidad esta hace el siguiente proceso:
-- Come la cantidad de cosecha standar por unidad si hay (si come esta cantidad puede recuperar eficiencia progresivamente)
-- Si no hay la cantidad de cosecha standar esta unidad perderá eficiencia en proporción a la cantidad que ha comido.
+- Come la cantidad de colecta standar por unidad si hay (si come esta cantidad puede recuperar eficiencia progresivamente)
+- Si no hay la cantidad de colecta standar esta unidad perderá eficiencia en proporción a la cantidad que ha comido.
 
-- Cosecha todo lo que su eficiencia le dicta si hay recursos suficientes (hay un riesgo de lesión a mayor esfuerzo que afecta a la eficiencia)
+- Colecta todo lo que su eficiencia le dicta si hay recursos suficientes (hay un riesgo de lesión a mayor esfuerzo que afecta a la eficiencia)
 
-En cada iteración se acumula la cosecha recogida para alimentar al conjunto en la siguiente iteración.
+En cada iteración se acumula la colecta recogida para alimentar al conjunto en la siguiente iteración.
 
-La cantidad de recursos puede variar segun los parametros, habiendo tiempos de crisis en los que hay menos recursos, por ende habra menos cosecha y 
+La cantidad de recursos puede variar segun los parametros, habiendo tiempos de crisis en los que hay menos recursos, por ende habra menos colecta y 
 como consecuencia en la siguiente iteración habrán unidades que no puedan comer por completo y se verá afectada su eficiencia.
