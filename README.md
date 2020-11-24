@@ -19,3 +19,10 @@ Por ese motivo he desarrollado un algoritmo que se manifiesta como una cuenta re
 y donde el resultado es un proceso que va desde un punto optimo y eficiente hasta un colapso final o muerte sin usar memoria a nivel 
 temporal, solo un puñado de unidades o celulas o individuos interactuando entre si.
 
+## en que consiste el algoritmo
+
+Contamos con un conjunto de unidades, pueden ser celulas, sistemas o individuos segun la escala a la que queramos hacer referencia.
+(El funcionamiento del algoritmo es el mismo para todas ellas, solo cambia el aspecto visual)
+
+Estas unidades necesitan alimento periodicamente y transforman recursos primarios en alimento segun su eficiencia.
+El punto importante es que cada unidad no se alimenta del alimento que ella produce, sino que todas las unidades reparten el alimento producido en cada cosecha.
