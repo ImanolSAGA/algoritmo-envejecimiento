@@ -27,5 +27,19 @@ Contamos con un conjunto de unidades, pueden ser celulas, sistemas o individuos 
 ![Selection2](.gitData/gif2.gif)
 ![Selection](/.gitData/gif1.gif)
 
-Estas unidades necesitan alimento periodicamente y transforman recursos primarios en alimento segun su eficiencia.
-El punto importante es que cada unidad no se alimenta del alimento que ella produce, sino que todas las unidades reparten el alimento producido en cada cosecha.
+El algoritmo funciona de forma reiterativa en un loop.
+
+Al principio del loop se les asigna una eficiencia del 100% a todas las unidades.
+
+En cada iteración del loop, se seleccionan todas las unidades en orden aleatorio.
+
+Cada vez que se selecciona una unidad esta hace el siguiente proceso:
+- Come la cantidad de cosecha standar por unidad si hay (si come esta cantidad puede recuperar eficiencia progresivamente)
+- Si no hay la cantidad de cosecha standar esta unidad perderá eficiencia en proporción a la cantidad que ha comido.
+
+- Cosecha todo lo que su eficiencia le dicta si hay recursos suficientes (hay un riesgo de lesión a mayor esfuerzo que afecta a la eficiencia)
+
+En cada iteración se acumula la cosecha recogida para alimentar al conjunto en la siguiente iteración.
+
+La cantidad de recursos puede variar segun los parametros, habiendo tiempos de crisis en los que hay menos recursos, por ende habra menos cosecha y 
+como consecuencia en la siguiente iteración habrán unidades que no puedan comer por completo y se verá afectada su eficiencia.
