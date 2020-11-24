@@ -24,8 +24,8 @@ temporal, solo un puñado de unidades o celulas o individuos interactuando entre
 Contamos con un conjunto de unidades, pueden ser celulas, sistemas o individuos segun la escala a la que queramos hacer referencia.
 (El funcionamiento del algoritmo es el mismo para todas ellas, solo cambia el aspecto visual)
 
+![Selection2](.gitData/gif2.gif)
 ![Selection](/.gitData/gif1.gif)
-Format: ![Alt Text](url)
 
 Estas unidades necesitan alimento periodicamente y transforman recursos primarios en alimento segun su eficiencia.
 El punto importante es que cada unidad no se alimenta del alimento que ella produce, sino que todas las unidades reparten el alimento producido en cada cosecha.
