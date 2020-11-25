@@ -49,19 +49,19 @@ El resultado es un proceso de desgaste bastante complejo de la eficiencia.
 
 ![Params](.gitData/params.png)
 
-#### recursosXCiud 
+##### recursosXCiud 
 La cantidad de recursos que apareceran por cada ciudadano en cada iteración del loop
-#### produccionXCiud
+##### produccionXCiud
 Que coeficiente de producción maximo tendrá cada ciudadano, ej valor 2 es que produce el doble de lo que consume
-#### periodoEntreCrisis
+##### periodoEntreCrisis
 Entre crisis y crisis habrá un periodo de recursos al maximo, que durará las iteraciones que se marquen en este valor
-#### decaidaRecursos
+##### decaidaRecursos
 En el punto mas bajo de la crisis, los recuros decaerán tanto como este coeficiente
-#### periodoDeCrisis
+##### periodoDeCrisis
 Cuanto dura el periodo de cada crisis
-#### riesgoLesion
+##### riesgoLesion
 El coeficiente de riesgo de lesión que sufrirá cada unidad cuando realiza la colecta
-#### tasaRecuperacion
+##### tasaRecuperacion
 La tasa de recuperación en cada iteracion cuando la unidad ha comido al maximo. A mas eficiencia de la unidad, mayor recuperación.
 
 
