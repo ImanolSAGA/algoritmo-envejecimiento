@@ -1,12 +1,11 @@
 # algoritmo-envejecimiento
 
-(Este es un proyecto de Godot Game Engine, se puede editar, exportar o ejecutar usando ese engine)
+(Este es un proyecto de [Godot Game Engine](https://godotengine.org/), se puede editar, exportar o ejecutar usando ese engine)
 
 El objetivo de este programa es experimentar una teoria sobre el funcionamiento del envejecimiento tanto a nivel celular como 
-en otros escenarios de la naturaleza y a diferentes escalas.
+en otros escenarios de la naturaleza y a diferentes escalas. Entendiendo mejor el proceso podrán encontrarse puntos criticos para modificarlo.
 
-La idea es que el proceso de envejecimiento actua a modo de cuenta atras, y para crear una cuenta atras hace falta una unidad de memoria temporal, como un 
-contador.
+La idea es que el proceso de envejecimiento actua a modo de cuenta atras, y para crear una cuenta atras normalmente hace falta una unidad de memoria temporal, como un contador.
 
 Cuando se habla de envejecimiento se suele creer que hay una cierta información celular en el ADN que va modificandose segun 
 pasan los dias de vida y que las cosas van dejando de funcionar gradualmente.
@@ -35,7 +34,7 @@ En cada iteración del loop, se seleccionan todas las unidades en orden aleatori
 
 Cada vez que se selecciona una unidad esta hace el siguiente proceso:
 - Come la cantidad de colecta standar por unidad si hay (si come esta cantidad puede recuperar eficiencia progresivamente)
-- Si no hay la cantidad de colecta standar esta unidad perderá eficiencia en proporción a la cantidad que ha comido.
+- Si no hay la cantidad de colecta standar esta unidad perderá eficiencia en proporción a la cantidad que no ha comido.
 
 - Colecta todo lo que su eficiencia le dicta si hay recursos suficientes (hay un riesgo de lesión a mayor esfuerzo que afecta a la eficiencia)
 
@@ -43,3 +42,9 @@ En cada iteración se acumula la colecta recogida para alimentar al conjunto en 
 
 La cantidad de recursos puede variar segun los parametros, habiendo tiempos de crisis en los que hay menos recursos, por ende habra menos colecta y 
 como consecuencia en la siguiente iteración habrán unidades que no puedan comer por completo y se verá afectada su eficiencia.
+
+El resultado es un proceso de desgaste bastante complejo de la eficiencia.
+
+##parametros modificables
+
+
